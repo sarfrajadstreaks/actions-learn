@@ -1,0 +1,18 @@
+name: "First action"
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Sample input"
+        default: "Test"
+        required: true
+        type: string
+  jobs:
+    greet:
+      name: "Greeting ! "
+      runs-on:
+        - ubuntu-latest
+      steps:
+        name: "Send Greetings"
+        run: |
+          echo "Hello ${{github.event.input.name}}"
