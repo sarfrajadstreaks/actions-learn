@@ -7,12 +7,11 @@ on:
         default: "Test"
         required: true
         type: string
-  jobs:
-    greet:
-      name: "Greeting ! "
-      runs-on:
-        - ubuntu-latest
-      steps:
-        name: "Send Greetings"
-        run: |
-          echo "Hello ${{github.event.input.name}}"
+jobs:
+  greet:
+    name: "Greeting ! "
+    runs-on:
+      - ubuntu-latest
+    steps:
+      - name: "Send Greetings"
+        run: echo "Hello ${{github.event.input.name}}"
